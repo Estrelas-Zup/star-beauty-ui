@@ -9,7 +9,10 @@ function Home() {
             <Link to="/login">Login</Link>
           </li>
           <li>
-            <Link to="/scheduling">Agendamento</Link>
+            <Link to="/agendamentos">Meus Agendamentos</Link>
+          </li>
+          <li>
+            <Link to="/fazer-agendamento">Fazer agendamento</Link>
           </li>
         </ul>
       </nav>
