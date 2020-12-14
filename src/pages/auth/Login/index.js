@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import './styles.css'
 
 function Login() {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit } = useForm();
   const history = useHistory();
   const [hasError, setHasError] = useState(false);
 
