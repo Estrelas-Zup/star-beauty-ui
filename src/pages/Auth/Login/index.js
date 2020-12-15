@@ -25,39 +25,39 @@ function Login() {
     <div className="container login-container">
       <main className="form-signin">
         <form onSubmit={handleSubmit(onSubmit)}>
-          {/* <img className="mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57" /> */}
-          <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
-            {hasError && (
-              <div className="alert alert-danger" role="alert">
-                Erro ao autenticar usuário!
-              </div>
-            )}
-          <label htmlFor="inputEmail" className="visually-hidden">Email address</label>
+          <img className="mb-4 st-image" src='/images/Beauty.png' alt="" width="400" height="200" />
+          <h1 className="mb-3 fw-normal titulo">ENTRAR</h1>
+          {hasError && (
+            <div className="alert alert-danger" role="alert">
+              Erro ao autenticar usuário!
+            </div>
+          )}
+          <label htmlFor="inputEmail" className="visually-hidden"></label>
           <input
             type="email"
             id="inputEmail"
             className="form-control"
-            placeholder="Email address"
+            placeholder="Email"
             name="login"
             ref={register}
             required
             autoFocus
           />
-          <label htmlFor="inputPassword" className="visually-hidden">Password</label>
+          <label htmlFor="inputPassword" className="visually-hidden"></label>
           <input
             type="password"
             id="inputPassword"
             className="form-control"
-            placeholder="Password"
+            placeholder="Senha"
             name="senha"
             ref={register}
             required
           />
-          
-          <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+
+          <button className="btn btn-lg btn-primary" type="submit">ENTRAR</button>
         </form>
       </main>
-    </div>
+    </div >
   )
 }
 
