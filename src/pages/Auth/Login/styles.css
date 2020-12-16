@@ -58,3 +58,11 @@
 .titulo{
   font-size: 30px;
 }
+
+html{
+  background-color: rgba(128, 128, 128, 0.39) ;
+}
+
+#root{
+  background-color: rgba(128, 128, 128, 0.39) ;
+}
