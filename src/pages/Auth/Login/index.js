@@ -25,8 +25,8 @@ function Login() {
     <div className="container login-container">
       <main className="form-signin">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <img className="mb-4 st-image" src='/images/Beauty.png' alt="" width="400" height="200" />
-          <h1 className="mb-3 fw-normal titulo">ENTRAR</h1>
+          <img className="mb-4 st-imageLogin" src='/images/Beauty.png' alt="" width="400" height="200" />
+          <h1 className="mb-3 fw-normal tituloLogin">ENTRAR</h1>
           {hasError && (
             <div className="alert alert-danger" role="alert">
               Erro ao autenticar usuário!
