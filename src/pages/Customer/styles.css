@@ -10,12 +10,19 @@
 
 }
 
-.selectAutonomos{
-
+.selectAutonomos{    
 }
 
 .selectPagamentos{
 
+}
+
+.react-select__control {
+  height: 50px;
+}
+
+.date-time-picker {
+  height: 50px;
 }
 
 .allSelects{

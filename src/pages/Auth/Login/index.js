@@ -54,7 +54,7 @@ function Login() {
             required
           />
 
-          <button className="btn btn-lg btn-primary" type="submit">ENTRAR</button>
+          <button className="btn-login btn-lg btn-primary" type="submit">ENTRAR</button>
         </form>
       </main>
     </div >
