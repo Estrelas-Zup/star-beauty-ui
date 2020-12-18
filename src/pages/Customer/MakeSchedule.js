@@ -76,23 +76,6 @@ function MakeSchedule() {
       })
   }
 
-  // const names = [
-  //   {
-  //     id: 1,
-  //     name: 'name 1'
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'name 2'
-  //   },
-  //   {
-  //     id: 3,
-  //     name: 'name 3'
-  //   }
-  // ];
-
-  // https://pt-br.reactjs.org/docs/lists-and-keys.html
-
   return (
     <div>
       <Navbar />
@@ -101,9 +84,6 @@ function MakeSchedule() {
         <div className="container">
           <div className="row">
             <div className="col-6">
-              {/* {names.map(item =>
-                <h1 key={item.id}>{item.name}</h1>
-              )} */}
               <Select
                 className="selectServico mb-3"
                 classNamePrefix="react-select"

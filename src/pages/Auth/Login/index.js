@@ -13,7 +13,7 @@ function Login() {
     axios.post('http://localhost:8080/login', data)
       .then(response => {
         localStorage.setItem('authData', response.data.jwtToken);
-        history.push('/agendamento');
+        history.push('/fazer-agendamento');
         setHasError(false);
       })
       .catch(error => {
