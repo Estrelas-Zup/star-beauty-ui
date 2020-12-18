@@ -10,7 +10,7 @@ function Login() {
   const [hasError, setHasError] = useState(false);
 
   const onSubmit = data => {
-    axios.post('https://5aae71c07389ab0014b7b943.mockapi.io/login', data)
+    axios.post('http://localhost:8080/login', data)
       .then(response => {
         localStorage.setItem('authData', response.data.jwtToken);
         history.push('/agendamento');

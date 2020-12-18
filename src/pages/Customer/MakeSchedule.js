@@ -1,27 +1,127 @@
+import { useEffect } from 'react';
+import Navbar from '../../core/components/Navbar'
+import axios from 'axios'
+import Select from 'react-select'
+import { useState } from 'react';
+import DateTimePicker from '../../core/components/Scheduler/Scheduler.js'
+
+
+const headers = {
+  Authorization: `Bearer ${localStorage.getItem("authData")}`
+}
+
 function MakeSchedule() {
+
+  const [services, setServices] = useState([])
+  const [saloons, setSaloons] = useState([])
+  const [employees, setEmployees] = useState([])
+  const [autonomous, setAutonomous] = useState([])
+  const [payments, setPayments] = useState([])
+  const [formState, setFormState] = useState({})
+
+  const handleChange = (name, value) => {
+    setFormState(state => ({
+      ...state,
+      [name]: value
+    }))
+  }
+
+  const handleChangeSaloon = (saloon) => {
+    setEmployees(saloon?.funcionarios)
+    setPayments(saloon?.formasPagamento)
+  }
+
+  useEffect(() => {
+    axios("http://localhost:3000/servicos", { headers })
+      .then(response => {
+        setServices(response.data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }, [])
+
+  useEffect(() => {
+    axios("http://localhost:3000/saloes", { headers })
+      .then(response => {
+        setSaloons(response.data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }, [])
+
+  useEffect(() => {
+    axios("http://localhost:3000/autonomos", { headers })
+      .then(response => {
+        setAutonomous(response.data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }, [])
+
+  const onSubmit = () => {
+    console.log({
+      formState
+    })
+  }
+
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <img className="navBarStarLogo" src="/images/Beauty.png" alt="" width="30" height="24" />
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="/Home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/agendamentos">Meus Agendamentos </a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" aria-current="page" href="/fazer-agendamento">Agendar</a>
-              </li>
-              <li class="nav-item">
-              </li>
-            </ul>
-          </div>
+      <Navbar />
+      <div className="container">
+        <h3>AGENDAMENTO</h3>
+        <div className="container allSelects">
+          <Select
+            className="selectServico"
+            isClearable
+            onChange={value => handleChange("idServico", value?.idServico)}
+            placeholder="Serviços"
+            options={services}
+            getOptionValue={option => option.idServico}
+            getOptionLabel={option => option.nomeServico}
+          />
+          <Select
+            className="selectSalao"
+            isClearable
+            onChange={saloon => handleChangeSaloon(saloon)}
+            placeholder="Salões"
+            options={saloons}
+            getOptionValue={option => option.idUsuario}
+            getOptionLabel={option => option.nomeFantasia}
+          />
+          <Select
+            className="selectFuncionarios"
+            isClearable
+            onChange={value => handleChange("idFuncionario", value?.idFuncionario)}
+            placeholder="Funcioarios"
+            options={employees}
+            getOptionValue={option => option.idFuncionario}
+            getOptionLabel={option => option.nome}
+          />
+          <Select
+            className="selectAutonomos"
+            isClearable
+            onChange={value => handleChange("idProfissionalAutonomo", value?.idUsuario)}
+            placeholder="Profissionais Autonômos"
+            options={autonomous}
+            getOptionValue={option => option.idUsuario}
+            getOptionLabel={option => option.nome}
+          />
+          <Select
+            className="selectPagamentos"
+            isClearable
+            onChange={value => handleChange("tipoPagamento", value?.tipoPagamento)}
+            placeholder="Formas De Pagamento"
+            options={payments}
+            getOptionValue={option => option.idFormaPagamento}
+            getOptionLabel={option => option.tipoPagamento}
+          />
         </div>
-      </nav>
-      <h1>fazer agendamento</h1>
+        <DateTimePicker/>
+        <button className="btn btn-primary" onClick={onSubmit}>AGENDAR</button>
+      </div>
     </div>
   )
 }
