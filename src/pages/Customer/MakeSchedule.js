@@ -63,16 +63,16 @@ function MakeSchedule() {
 
   const handleChangeDateTime = (value) => {
     const normalizedDateTime = moment(value).format('yyyy-MM-DDTHH:mm:ss');
-    handleChange('dataHora', normalizedDateTime,);
+    handleChange("dataHora", normalizedDateTime,);
   }
 
   const onSubmit = () => {
     axios.post("http://localhost:3000/agendamentos", formState, { headers })
-      .then(() => {
+      .then((response) => {
         toast.success("Agendamento criado com sucesso!");
       })
       .catch(error => {
-        toast.error("Houve um erro ao criar agendamento!");
+        toast.error(error.response.data.mensagem);
       })
   }
 
