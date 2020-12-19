@@ -109,7 +109,7 @@ function MakeSchedule() {
                 classNamePrefix="react-select"
                 isClearable
                 onChange={value => handleChange("idFuncionario", value?.idFuncionario)}
-                placeholder="Funcioarios"
+                placeholder="Funcionarios"
                 options={employees}
                 getOptionValue={option => option.idFuncionario}
                 getOptionLabel={option => option.nome}
