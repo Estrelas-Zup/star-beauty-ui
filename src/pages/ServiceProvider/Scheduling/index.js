@@ -1,21 +1,7 @@
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import interactionPlugin from "@fullcalendar/interaction";
 import Navbar from '../../../core/components/Navbar'
 
 function Scheduling() {
-  const handleDateClick = (arg) => {
-    alert(arg.dateStr)
-  }
 
-  const renderEventContent = (eventInfo) => {
-    return (
-      <>
-        <b>{eventInfo.timeText}</b>
-        <b>{eventInfo.event.title}</b>
-      </>
-    )
-  }
 
   return (
     <div>
