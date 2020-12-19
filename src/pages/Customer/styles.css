@@ -1,32 +1,55 @@
-.selectServico{
-
-}
-
-.selectSalao{
-
-}
-
-.selectFuncionarios{
-
-}
-
-.selectAutonomos{    
-}
-
-.selectPagamentos{
-
-}
-
 .react-select__control {
+  margin-top: 30px;
   height: 50px;
+  text-align: center;
 }
 
-.date-time-picker {
-  height: 50px;
+.dateTimePickerStyle {
+  padding-bottom: 50px;
+  margin-top: 35px;
+  text-align: center;
 }
 
 .allSelects{
-    position: absolute;
-    margin-top: 1000px;
-    width: 40px;
+  margin-top: 30px;
+  border: 5px solid rgba(48, 48, 48, 0.897);
+  background-color:rgba(220, 20, 60, 0.897);
+  border-radius: 80px;
+  padding-bottom: 50px;
+  padding-top: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
 }
+
+.titleSchedule{
+  font-size: 32px;
+  width: 600px;
+  background-color: rgba(43, 42, 42, 0.815);
+  border: 1px  rgba(43, 42, 42, 0.938) solid;
+  border-radius: 20px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-top: 20px;
+  margin-left: 250px;
+  color: rgb(220, 167, 20);
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+}
+
+.btnAgendar{
+  margin-bottom: -460px;
+  width: 475px;
+}
+
+.stbLogoBack{
+    background-Image: url("http://localhost:3000/images/Beauty.png");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-attachment: fixed;
+    background-position-y: 240px;
+    background-position-x: 650px;
+    overflow: hidden;
+
+}
+

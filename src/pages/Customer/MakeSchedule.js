@@ -77,15 +77,16 @@ function MakeSchedule() {
   }
 
   return (
-    <div>
+    <div className="backgroundImage" style={{
+      backgroundImage: `url("http://localhost:3000/images/backgroundImage.jpg")`
+    }}>
       <Navbar />
       <div className="container">
-        <h3>AGENDAMENTO</h3>
+        <h3 className="titleSchedule">AGENDAR PROCEDIMENTO DE BELEZA</h3>
         <div className="container">
-          <div className="row">
+          <div className="row allSelects stbLogoBack">
             <div className="col-6">
               <Select
-                className="selectServico mb-3"
                 classNamePrefix="react-select"
                 isClearable
                 onChange={value => handleChange("idServico", value?.idServico)}
@@ -95,7 +96,7 @@ function MakeSchedule() {
                 getOptionLabel={option => option.nomeServico}
               />
               <Select
-                className="selectSalao mb-3"
+
                 classNamePrefix="react-select"
                 isClearable
                 onChange={saloon => handleChangeSaloon(saloon)}
@@ -105,7 +106,6 @@ function MakeSchedule() {
                 getOptionLabel={option => option.nomeFantasia}
               />
               <Select
-                className="selectFuncionarios mb-3"
                 classNamePrefix="react-select"
                 isClearable
                 onChange={value => handleChange("idFuncionario", value?.idFuncionario)}
@@ -115,7 +115,6 @@ function MakeSchedule() {
                 getOptionLabel={option => option.nome}
               />
               <Select
-                className="selectAutonomos mb-3"
                 classNamePrefix="react-select"
                 isClearable
                 onChange={value => handleChange("idProfissionalAutonomo", value?.idUsuario)}
@@ -125,7 +124,6 @@ function MakeSchedule() {
                 getOptionLabel={option => option.nome}
               />
               <Select
-                className="selectPagamentos mb-3"
                 classNamePrefix="react-select"
                 isClearable
                 onChange={value => handleChange("tipoPagamento", value?.tipoPagamento)}
@@ -139,7 +137,7 @@ function MakeSchedule() {
               <DateTimePicker onChange={handleChangeDateTime} />
               <button
                 type="button"
-                className="btn btn-lg btn-block btn-primary mt-3"
+                className="btn btn-lg btn-primary mt-3 btnAgendar"
                 onClick={onSubmit}
               >
                 Criar agendamento

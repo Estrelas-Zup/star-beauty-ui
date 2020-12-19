@@ -6,9 +6,9 @@ function DateTimePicker(props) {
   return (
     <Datetime 
       onChange={props.onChange}
-      className="date-time-picker"
+      className="date-time-picker dateTimePickerStyle"
       inputProps={{
-        placeholder: 'Selecione uma data e hora'
+        placeholder: 'Selecione a data e hora do agendamento'
       }}
       timeFormat
     />

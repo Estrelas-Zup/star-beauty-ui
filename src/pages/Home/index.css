@@ -1,12 +1,11 @@
 .backgroundImage{
     margin: auto;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     background-attachment: fixed;
-    -webkit-overflow-scrolling: auto;
-    width: 1360px;
-    height: 596px;
+    height: 100vh;
     background-position: center;
+    overflow: hidden;
   }
   
   .textoHome{

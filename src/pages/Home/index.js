@@ -4,10 +4,10 @@ import Navbar from '../../core/components/Navbar'
 function Home() {
   return (
     <div>
-      <Navbar />
       <div className="backgroundImage" style={{
         backgroundImage: `url("http://localhost:3000/images/backgroundImage.jpg")`
       }}>
+        < Navbar />
         <div className="st-image">
           <img className="mb-4" src='/images/Beauty.png' alt="" width="400" height="200" />
         </div>
