@@ -4,7 +4,7 @@ import './styles.css'
 function Navbar() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light navBarSystem">
         <div className="container-fluid">
           <img className="navBarStarLogo" src="/images/Beauty.png" alt="" width="30" height="24" />
           <div className="collapse navbar-collapse" id="navbarNav">
@@ -13,7 +13,7 @@ function Navbar() {
                 <NavLink className="nav-link" to="/Home">Home</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/agendamentos">Meus Agendamentos </NavLink>
+                <NavLink className="nav-link" to="/meus-agendamentos">Meus Agendamentos </NavLink>
               </li>
               <li className="nav-item ">
                 <NavLink className="nav-link" to="/fazer-agendamento">Agendar</NavLink>

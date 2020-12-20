@@ -7,7 +7,7 @@ import PrivateRoute from "./core/components/PrivateRoute";
 import Login from './pages/Auth/Login';
 import MakeSchedule from "./pages/Customer/MakeSchedule";
 import Home from './pages/Home';
-import Scheduling from './pages/ServiceProvider/Scheduling';
+import ListSchedule from './pages/ServiceProvider/Scheduling';
 
 function Routes() {
   return (
@@ -16,8 +16,8 @@ function Routes() {
         <Route path="/login">
           <Login />
         </Route>
-        <PrivateRoute path="/agendamentos">
-          <Scheduling />
+        <PrivateRoute path="/meus-agendamentos">
+          <ListSchedule />
         </PrivateRoute>
         <PrivateRoute path="/fazer-agendamento">
           <MakeSchedule />

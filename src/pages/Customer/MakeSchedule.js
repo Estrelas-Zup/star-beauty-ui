@@ -19,6 +19,10 @@ function MakeSchedule() {
   const [payments, setPayments] = useState([])
   const [formState, setFormState] = useState({})
 
+  const [selectedSaloon, setSelectedSaloon] = useState(null)
+  const [selectedEmployee, setSelectedEmployee] = useState(null)
+  const [selectedPayment, setSelectedPayment] = useState(null)
+
   useEffect(() => {
     axios("http://localhost:3000/servicos", { headers })
       .then(response => {
@@ -57,6 +61,11 @@ function MakeSchedule() {
   }
 
   const handleChangeSaloon = (saloon) => {
+
+    setSelectedSaloon(saloon)
+    setSelectedEmployee(null)
+    setSelectedPayment(null)
+
     setEmployees(saloon?.funcionarios)
     setPayments(saloon?.formasPagamento)
   }
@@ -77,15 +86,16 @@ function MakeSchedule() {
   }
 
   return (
-    <div className="backgroundImage" style={{
-      backgroundImage: `url("http://localhost:3000/images/backgroundImage.jpg")`
-    }}>
+    <div className="backgroundImage"
+      style={{
+        backgroundImage: `url("http://localhost:3000/images/backgroundImage.jpg")`
+      }}>
       <Navbar />
-      <div className="container">
-        <h3 className="titleSchedule">AGENDAR PROCEDIMENTO DE BELEZA</h3>
+        <h3 className="titleSchedule">AGENDAR PROCEDIMENTO</h3>
         <div className="container">
           <div className="row allSelects stbLogoBack">
             <div className="col-6">
+              {/* <label></label> */}
               <Select
                 classNamePrefix="react-select"
                 isClearable
@@ -100,6 +110,7 @@ function MakeSchedule() {
                 classNamePrefix="react-select"
                 isClearable
                 onChange={saloon => handleChangeSaloon(saloon)}
+                value={selectedSaloon}
                 placeholder="Salões"
                 options={saloons}
                 getOptionValue={option => option.idUsuario}
@@ -108,7 +119,11 @@ function MakeSchedule() {
               <Select
                 classNamePrefix="react-select"
                 isClearable
-                onChange={value => handleChange("idFuncionario", value?.idFuncionario)}
+                onChange={value => {
+                  setSelectedEmployee(value);
+                  handleChange("idFuncionario", value?.idFuncionario)
+                }}
+                value={selectedEmployee}
                 placeholder="Funcionarios"
                 options={employees}
                 getOptionValue={option => option.idFuncionario}
@@ -126,7 +141,11 @@ function MakeSchedule() {
               <Select
                 classNamePrefix="react-select"
                 isClearable
-                onChange={value => handleChange("tipoPagamento", value?.tipoPagamento)}
+                onChange={value => {
+                  setSelectedPayment(value);
+                  handleChange("tipoPagamento", value?.tipoPagamento)
+                }}
+                value={selectedPayment}
                 placeholder="Formas De Pagamento"
                 options={payments}
                 getOptionValue={option => option.idFormaPagamento}
@@ -146,7 +165,6 @@ function MakeSchedule() {
           </div>
         </div>
       </div>
-    </div>
   )
 }
 

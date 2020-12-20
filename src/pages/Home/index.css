@@ -36,42 +36,6 @@
     font-size: 25px;
   }
   
-  .btnLogin{
-    margin-left: 850px;
-    margin-bottom: 5px;
-    width: 100px;
-    height: 40px;
-    border-radius: 20px;
-    border:darkblue solid 2px;
-    background-color: rgb(64, 64, 255);
-    color: white;
-    font-weight: bold;
-    outline: none;
-    box-shadow: 3px 3px 0px rgb(64, 64, 255);
-    text-align: center;
-    padding-top: 1px;
-    font-family: cursive;
-    font-size: 18px;
-  }
-  
-  .btnLogin:hover{
-    background-color: darkblue;
-    color: white;
-    outline: none;
-    border: none;
-    text-align: center;
-    padding-top: 3px
-  }
-  
-  .btnLogin:active{
-    position: relative;
-    top: 4px;
-    box-shadow: none;
-    left: 4px;
-    outline: none;
-    border: none;
-  }
-  
   .st-image{
   width: 500px;
   height: 500;
