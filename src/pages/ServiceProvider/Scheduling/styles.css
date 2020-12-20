@@ -46,10 +46,10 @@ font-size: 17px;
 }
 
 .titleMySchedules{
-    color: crimson;
+    color: rgb(255, 196, 4);
     margin-left: -200px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: rgba(0, 0, 0, 0.808);
+    background-color: rgba(0, 0, 0, 0.747);
     width: 1500px;
     text-align: center;
     border-radius: 20px;
