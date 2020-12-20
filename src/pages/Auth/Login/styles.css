@@ -2,6 +2,12 @@
 .login-container {
   padding-top: 40px;
   padding-bottom: 40px;
+  text-align: center;
+  margin-top: -30px;
+}
+
+.st-imageLogin{
+  margin-left: -60px;
 }
 
 .form-signin {
@@ -10,9 +16,7 @@
   padding: 15px;
   margin: auto;
 }
-.form-signin .checkbox {
-  font-weight: 400;
-}
+
 .form-signin .form-control {
   position: relative;
   box-sizing: border-box;
@@ -27,9 +31,38 @@
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+  width: 350px;
+  height: 55px;
+  border-radius: 8px;
+  margin-left: -22px;
+  padding-bottom: 15px;
 }
 .form-signin input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  width: 350px;
+  height: 55px;
+  border-radius: 8px;
+  margin-left: -22px;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+}
+
+.btn-login {
+  width: 350px;
+  height: 55px;
+  margin-left: -22px;
+}
+
+.tituloLogin{
+  font-size: 30px;
+}
+
+html{
+  background-color: rgba(128, 128, 128, 0.39) ;
+}
+
+#root{
+  background-color: rgba(128, 128, 128, 0.39) ;
 }

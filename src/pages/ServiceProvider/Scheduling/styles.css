@@ -1,0 +1,60 @@
+.allSchedules{
+    border: rgba(0, 0, 0, 0) 10px solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-left: 140px;
+    overflow-y: scroll;
+    width: 850px;
+    height: 480px;
+    background-color: rgba(48, 48, 48, 0.726);
+}
+
+.cardSchedule{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: 4px rgb(167, 241, 17) solid;
+    background-color: rgb(211, 211, 211);
+    margin-bottom: 10px;
+    border-radius: 30px;
+    overflow: hidden;
+    padding-left: 50px;
+    padding-top: 10px;
+    height: 150px;
+    width: 700px;
+    margin-left: 25px;
+    margin-top: 10px;   
+    margin-bottom: 20px;
+}
+
+.internalSizeCard{
+width: 300px;
+font-weight: bold;
+font-size: 17px;
+}
+
+.allSchedules::-webkit-scrollbar{
+    width: 10px;
+    margin-right: 100px;
+}
+
+.allSchedules::-webkit-scrollbar-thumb{
+    border-radius:50px;
+    background-color: orange;
+}
+
+.titleMySchedules{
+    color: rgb(255, 196, 4);
+    margin-left: -200px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgba(0, 0, 0, 0.747);
+    width: 1500px;
+    text-align: center;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 32px;
+}

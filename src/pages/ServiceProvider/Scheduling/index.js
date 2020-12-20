@@ -1,40 +1,58 @@
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import interactionPlugin from "@fullcalendar/interaction";
+import './styles.css'
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import Navbar from '../../../core/components/Navbar'
 
-function Scheduling() {
-  const handleDateClick = (arg) => {
-    alert(arg.dateStr)
-  }
+const headers = {
+  Authorization: `Bearer ${localStorage.getItem("authData")}`
+}
 
-  const renderEventContent = (eventInfo) => {
-    return (
-      <>
-        <b>{eventInfo.timeText}</b>
-        <b>{eventInfo.event.title}</b>
-      </>
-    )
+function ListSchedule() {
+  const [listSchedule, setListSchedule] = useState([])
+
+  useEffect(() => {
+    axios("http://localhost:3000/agendamentos/meus-agendamentos", { headers })
+      .then(response => {
+        console.log(response.data)
+        setListSchedule(response.data)
+      })
+      .catch(error => {
+        console.log(error.response.data.mensagem)
+      })
+  }, [])
+
+
+
+  const renderElements = () => {
+    return listSchedule.map(schedule => {
+      return (
+        <div className="cardSchedule">
+          <div key={schedule.idAgendamento} className="internalSizeCard">
+            <p>Serviço: {schedule.servico.nomeServico}<br />
+              Método de pagamento: {schedule.tipoPagamento}<br />
+              Data e hora do agendamento:<br />
+              {schedule.dataHora}<br />
+              {schedule.dataHoraFim}</p>
+          </div>
+        </div>
+      )
+    })
   }
 
   return (
-    <div className="container">
-      <FullCalendar
-        headerToolbar={{
-          left: 'prev,next today',
-          center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay'
-        }}
-        plugins={[ dayGridPlugin, interactionPlugin ]}
-        initialView="dayGridMonth"
-        events={[
-          { title: 'event 1', date: '2020-12-01' },
-          { title: 'event 2', date: '2020-12-12' }
-        ]}
-        eventContent={renderEventContent}
-        dateClick={handleDateClick}
-      />
+    <div className="backgroundImage"
+      style={{
+        backgroundImage: `url("http://localhost:3000/images/backgroundImage.jpg")`
+      }}>
+      <Navbar />
+      <div className="container">
+        <h3 className="titleMySchedules">MEUS AGENDAMENTOS</h3>
+        <div className="allSchedules">
+          {renderElements()}
+        </div>
+      </div>
     </div>
   );
 }
 
-export default Scheduling;
+export default ListSchedule;

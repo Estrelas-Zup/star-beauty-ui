@@ -1,0 +1,45 @@
+.backgroundImage{
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    height: 100vh;
+    background-position: center;
+    overflow: hidden;
+  }
+  
+  .textoHome{
+   margin-top: 30px;
+    text-align: center;
+    margin-left: 350px;  
+    width: 650px;
+    border: orange solid 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.589);
+    font-family: cursive;
+    padding-top: 20px;
+  }
+  
+  .titulo{
+  font-size: small;
+  background-color: orange;
+  border: orange 2px solid;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  padding-top: 2px;
+  font-size: 30px;
+  }
+  
+  .corpo{
+    font-size: 25px;
+  }
+  
+  .st-image{
+  width: 500px;
+  height: 500;
+  margin-left: 450px;
+  padding-top: 70px;
+  padding-bottom: 0;
+  }

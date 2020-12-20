@@ -3,9 +3,11 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import PrivateRoute from "./core/components/PrivateRoute";
 import Login from './pages/Auth/Login';
+import MakeSchedule from "./pages/Customer/MakeSchedule";
 import Home from './pages/Home';
-import Scheduling from './pages/ServiceProvider/Scheduling';
+import ListSchedule from './pages/ServiceProvider/Scheduling';
 
 function Routes() {
   return (
@@ -14,9 +16,12 @@ function Routes() {
         <Route path="/login">
           <Login />
         </Route>
-        <Route path="/scheduling">
-          <Scheduling />
-        </Route>
+        <PrivateRoute path="/meus-agendamentos">
+          <ListSchedule />
+        </PrivateRoute>
+        <PrivateRoute path="/fazer-agendamento">
+          <MakeSchedule />
+        </PrivateRoute>
         <Route path="/">
           <Home />
         </Route>
