@@ -17,7 +17,7 @@ function ListSchedule() {
         setListSchedule(response.data)
       })
       .catch(error => {
-        console.log(error.response.data.mensagem)
+        console.log(error)
       })
   }, [])
 
