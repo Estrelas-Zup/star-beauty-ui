@@ -14,7 +14,6 @@ function ListSchedule() {
   useEffect(() => {
     axios(`${BACKEND_URL}/agendamentos/meus-agendamentos`, { headers })
       .then(response => {
-        console.log(response.data)
         setListSchedule(response.data)
       })
       .catch(error => {
