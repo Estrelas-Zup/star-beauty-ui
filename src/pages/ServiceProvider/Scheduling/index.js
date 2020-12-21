@@ -2,6 +2,7 @@ import './styles.css'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Navbar from '../../../core/components/Navbar'
+import { BACKEND_URL } from '../../../core/constants/api';
 
 const headers = {
   Authorization: `Bearer ${localStorage.getItem("authData")}`
@@ -11,7 +12,7 @@ function ListSchedule() {
   const [listSchedule, setListSchedule] = useState([])
 
   useEffect(() => {
-    axios("http://localhost:3000/agendamentos/meus-agendamentos", { headers })
+    axios(`${BACKEND_URL}/agendamentos/meus-agendamentos`, { headers })
       .then(response => {
         console.log(response.data)
         setListSchedule(response.data)

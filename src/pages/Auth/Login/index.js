@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
+import { BACKEND_URL } from "../../../core/constants/api";
 import './styles.css'
 
 function Login() {
@@ -10,7 +11,7 @@ function Login() {
   const [hasError, setHasError] = useState(false);
 
   const onSubmit = data => {
-    axios.post('http://localhost:8080/login', data)
+    axios.post(`${BACKEND_URL}/login`, data)
       .then(response => {
         localStorage.setItem('authData', response.data.jwtToken);
         history.push('/fazer-agendamento');
