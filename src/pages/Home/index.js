@@ -1,12 +1,12 @@
 import './index.css'
 import Navbar from '../../core/components/Navbar'
+import backgroundImage from "../../images/backgroundImage.jpg"
 
 function Home() {
   return (
     <div>
-      <div className="backgroundImage" style={{
-        backgroundImage: `url("http://localhost:3000/images/backgroundImage.jpg")`
-      }}>
+      <div className="backgroundImage">
+      <img src={backgroundImage} alt="Logo" />
         < Navbar />
         <div className="st-image">
           <img className="mb-4" src='/images/Beauty.png' alt="" width="400" height="200" />
